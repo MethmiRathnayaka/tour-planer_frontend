@@ -6,7 +6,7 @@ export const AccContext = createContext(null)
 
 const AccContextProvider = (props) =>{
 
-    const url ="http://localhost:4000"
+    const url ="https://tourplanerbackend-production.up.railway.app"
     const [token, setToken] = useState(""); // Use empty string for consistency
     const [list,setList] = useState([]);
     useEffect(()=>{

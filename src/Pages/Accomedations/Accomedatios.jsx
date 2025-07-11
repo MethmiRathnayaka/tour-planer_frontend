@@ -29,7 +29,7 @@ const Trips = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-fetch("http://localhost:4000/api/user/me", {
+fetch("https://tourplanerbackend-production.up.railway.app/api/user/me", {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${token}`,
@@ -100,7 +100,7 @@ fetch("http://localhost:4000/api/user/me", {
     const nextWeek = new Date();
     nextWeek.setDate(today.getDate() + 7);
 
-    fetch(`http://localhost:4000/api/bookings/accommodation/${id}?startDate=${today.toISOString().split('T')[0]}&endDate=${nextWeek.toISOString().split('T')[0]}`)
+    fetch(`https://tourplanerbackend-production.up.railway.app/api/bookings/accommodation/${id}?startDate=${today.toISOString().split('T')[0]}&endDate=${nextWeek.toISOString().split('T')[0]}`)
       .then(res => res.json())
       .then(data => {
         if (data.success) {

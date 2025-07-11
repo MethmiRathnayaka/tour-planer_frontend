@@ -8,7 +8,7 @@ const SearchResults = () => {
 
   useEffect(() => {
     if (query) {
-      fetch(`http://localhost:4000/api/search?query=${query}`) // Replace with actual API
+      fetch(`https://tourplanerbackend-production.up.railway.app/api/search?query=${query}`) // Replace with actual API
         .then((res) => res.json())
         .then((data) => setResults(data))
         .catch((err) => console.error(err));

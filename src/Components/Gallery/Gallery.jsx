@@ -26,7 +26,7 @@ const Gallery = ({ images }) => {
         {images.map((image, index) => (
           <div key={index} className="carousel-slide">
             <img
-              src={`http://localhost:4000/uploads/${image}`}
+              src={`https://tourplanerbackend-production.up.railway.app/uploads/${image}`}
               alt={`Place ${index}`}
               className="carousel-image"
             />
