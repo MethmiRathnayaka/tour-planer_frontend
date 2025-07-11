@@ -1,0 +1,131 @@
+/* Header Styling */
+.header {
+    height: 50vw; /* Default height for large screens */
+    margin: 30px auto;
+    background: url('/header_img.jpg') no-repeat center center; /* Center image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    position: relative;
+    color: white; /* Text color */
+}
+
+/* Content Styling */
+.header-contenet {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    max-width: 50%; /* Default content width */
+    bottom: 10%; /* Position content near the bottom */
+    left: 6vw; /* Spacing from the left */
+    animation: fadeIn 3s;
+}
+
+.header-contenet h2 {
+    font-size: 3vw; /* Large font size for heading */
+    font-weight: bold;
+    margin: 0;
+    color: white; /* Ensure text is visible */
+}
+
+.header-contenet p {
+    font-size: 1.5vw; /* Slightly smaller text for paragraph */
+    margin: 0;
+    color: white;
+}
+
+.header-contenet button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 1.2vw;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.header-contenet button:hover {
+    background-color: white;
+    color: black; /* Invert colors on hover */
+}
+
+/* Responsive Adjustments */
+
+/* For tablets and medium screens */
+@media (max-width: 1024px) {
+    .header {
+        height: 60vw; /* Increase height for better visibility */
+    }
+
+    .header-contenet {
+        max-width: 60%; /* Slightly wider content area */
+        left: 4vw; /* Adjust left spacing */
+        gap: 2vw; /* Increase spacing between items */
+    }
+
+    .header-contenet h2 {
+        font-size: 4vw; /* Larger font size */
+    }
+
+    .header-contenet p {
+        font-size: 2vw; /* Larger paragraph text */
+    }
+
+    .header-contenet button {
+        font-size: 1.8vw; /* Adjust button text size */
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .header {
+        height: 70vw; /* Taller height for mobile */
+    }
+
+    .header-contenet {
+        max-width: 80%; /* Narrow content area for smaller screens */
+        left: 3vw; /* Less left spacing */
+        bottom: 5%; /* Adjust bottom position */
+        gap: 3vw; /* Increase spacing between items */
+    }
+
+    .header-contenet h2 {
+        font-size: 5vw; /* Larger font for smaller screens */
+    }
+
+    .header-contenet p {
+        font-size: 3vw; /* Adjust paragraph size */
+    }
+
+    .header-contenet button {
+        font-size: 2.5vw; /* Increase button text size */
+        padding: 12px 25px; /* Larger button */
+    }
+}
+
+/* For very small mobile screens */
+@media (max-width: 480px) {
+    .header {
+        height: 80vw; /* Even taller height */
+    }
+
+    .header-contenet {
+        max-width: 90%; /* Content spans most of the width */
+        left: 2vw; /* Minimal left spacing */
+        gap: 4vw; /* Larger spacing between elements */
+    }
+
+    .header-contenet h2 {
+        font-size: 6vw; /* Very large font size */
+    }
+
+    .header-contenet p {
+        font-size: 4vw; /* Adjust paragraph size */
+    }
+
+    .header-contenet button {
+        font-size: 3.5vw; /* Larger button text */
+        padding: 15px 30px; /* Bigger button */
+    }
+}

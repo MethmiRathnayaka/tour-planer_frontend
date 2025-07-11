@@ -1,0 +1,194 @@
+/* General Styles */
+.destination-details {
+  
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.destination-details h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.destination-details pre {
+  white-space: pre-wrap; /* Preserves new lines */
+  word-wrap: break-word;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: left;
+  color: #444;
+  overflow-x: auto; /* Prevents overflow issues */
+}
+
+/* Gallery */
+.gallery {
+  margin: 20px 0;
+}
+
+.gallery h2 {
+  font-size: 22px;
+  color: #555;
+}
+
+.gallery-images {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-images img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-images img:hover {
+  transform: scale(1.1);
+}
+
+/* Location Input */
+.location-input {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.location-input label {
+  font-size: 16px;
+  color: #444;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.location-input input {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.location-input button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.location-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Accommodations Link */
+.accommodations-link {
+  margin-top: 20px;
+}
+
+.btn-book {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  background-color: #28a745;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .destination-details {
+    padding: 15px;
+  }
+
+  .destination-details h1 {
+    font-size: 24px;
+  }
+
+  .gallery-images img {
+    max-width: 140px;
+  }
+
+  .location-input input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .location-input button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .btn-book {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .destination-details {
+    padding: 10px;
+  }
+
+  .destination-details h1 {
+    font-size: 20px;
+  }
+
+  .gallery-images img {
+    max-width: 120px;
+  }
+
+  .location-input input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .location-input button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .btn-book {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+.travel-costs {
+  margin-top: 30px;
+}
+
+.cost-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.cost-card {
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  flex: 1;
+}

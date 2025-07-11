@@ -1,0 +1,27 @@
+/* Map container holds both the map and directions */
+.map-container {
+    position: relative;
+    height: 500px;
+    width: 100%;
+  }
+  
+  /* The map itself */
+  .map {
+    height: 100%;
+    width: 100%;
+    z-index: 1; /* Make sure it's behind the directions */
+  }
+  
+  /* Styling for directions or other elements */
+  .directions {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    z-index: 2; /* Ensure directions are above the map */
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: background to make text readable */
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    font-size: 14px;
+  }
+  

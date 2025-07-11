@@ -1,0 +1,89 @@
+/* General styles for the place item */
+.item {
+    background-color: #fff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    overflow: hidden; /* Prevent content overflow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    cursor: pointer;
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Hover effects */
+  .item:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  /* Image container styles */
+  .item-img-container {
+    width: 100%;
+    height: 150px; /* Set fixed height for uniform layout */
+    overflow: hidden; /* Prevent image overflow */
+  }
+  
+  .item-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fits properly */
+    transition: transform 0.3s; /* Smooth zoom-in effect */
+  }
+  
+  .item-img-container img:hover {
+    transform: scale(1.1); /* Zoom in on hover */
+  }
+  
+  /* Information container */
+  .item-info {
+    padding: 1rem; /* Add padding for spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Name and rating styles */
+  .item-name-rating {
+    display: flex;
+    justify-content: space-between; /* Space between name and rating */
+    align-items: center;
+  }
+  
+  .item-name-rating p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333; /* Dark text color for visibility */
+    margin: 0;
+  }
+  
+  .item-name-rating img {
+    width: 120px;
+    height: 20px; /* Small size for rating stars */
+  }
+  
+  /* Description styles */
+  .food-item-desc {
+    font-size: 0.9rem;
+    color: #666; /* Muted color for description text */
+    margin-top: 0.5rem;
+    line-height: 1.4; /* Improve readability */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .item-img-container {
+      height: 120px; /* Adjust image height for smaller screens */
+    }
+  
+    .item-info {
+      padding: 0.8rem; /* Reduce padding for smaller screens */
+    }
+  
+    .item-name-rating p {
+      font-size: 4rem; /* Adjust text size */
+    }
+  
+    .food-item-desc {
+      font-size: 0.8rem; /* Adjust description font size */
+    }
+  }
+  
