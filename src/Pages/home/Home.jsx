@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <h1>Places you may like</h1>
+      <h1>Places you may like updated</h1>
       <Display category={category} />
     </div>
   );
