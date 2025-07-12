@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; // Added useState import
-import './Home.css';
+import './home.css';
 import Header from '../../Components/Header/Header';
 import ExplorePlaces from '../../Components/ExplorePlaces/ExplorePlaces';
 import Display from '../../Components/Display/display';
