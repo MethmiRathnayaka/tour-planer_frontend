@@ -3,6 +3,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import './Accomedations.css';
 import MapComponent from '../../Components/MapComponent/MapComponent';
 import Gallery from '../../Components/Gallery/Gallery';
+import Login from '../../Components/Login/Login';
 
 const Trips = () => {
   const { destination } = useParams();
@@ -24,6 +25,8 @@ const Trips = () => {
   const [bookingLoading, setBookingLoading] = useState(false);
   const [bookings, setBookings] = useState([]);
   const [availabilityLoading, setAvailabilityLoading] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
 
   // ✅ Get user from token
   useEffect(() => {
@@ -134,10 +137,12 @@ fetch("https://tourplanerbackend-production.up.railway.app/api/user/me", {
 
   const handleBooking = async (e) => {
     e.preventDefault();
+
+  // Check if user is logged in on initial load
     if (!user) {
-      window.alert("Please sign in to continue.");
-      return;
-    }
+    setShowLogin(true); // 👈 Trigger the login UI
+    return;
+  }
 
     if (!isRangeAvailable(checkIn, checkOut)) {
       setBookingMessage("Selected dates are not available.");
@@ -147,7 +152,7 @@ fetch("https://tourplanerbackend-production.up.railway.app/api/user/me", {
     setBookingLoading(true);
     setBookingMessage('');
     try {
-      const response = await fetch("http://localhost:4000/api/bookings", {
+    const response = await fetch("https://tourplanerbackend-production.up.railway.app/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -217,7 +222,11 @@ fetch("https://tourplanerbackend-production.up.railway.app/api/user/me", {
         <button type="submit" disabled={bookingLoading}>
           {bookingLoading ? "Booking..." : "Book Now"}
         </button>
+        {showLogin && (
+           <Login onClose={() => setShowLogin(false)} />
+          )}
         {bookingMessage && <p>{bookingMessage}</p>}
+
       </form>
 
       <div className="location-input">
