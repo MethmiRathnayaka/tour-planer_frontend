@@ -11,6 +11,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.10",
+    "@react-google-maps/api": "^2.20.7",
     "axios": "^1.7.9",
     "leaflet": "^1.9.4",
     "leaflet-routing-machine": "^3.2.12",

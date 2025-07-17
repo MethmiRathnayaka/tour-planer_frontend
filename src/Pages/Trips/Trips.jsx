@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import './trips.css';
 import MapComponent from '../../Components/MapComponent/MapComponent';
 import Gallery from '../../Components/Gallery/Gallery';
 import DisplayAcc from '../../Components/Display/displayAcc';
+import DistanceCalculator from '../../Components/DistanceCalculator/DistanceCalculator';
 
 const Trips = () => {
   const { destination } = useParams();
   const location = useLocation();
   const { placeId, name, description, images } = location.state || {};
-
-  // Add this console log to print placeId
-  console.log("Trips page - placeId:", placeId);
 
   const [startLocation, setStartLocation] = useState(null);
   const [userInputLocation, setUserInputLocation] = useState('');
@@ -26,17 +24,8 @@ const Trips = () => {
     smart: { label: 'Smartest Mode', rate: 50 },
   };
 
-  const handleDistanceFromMap = (distance) => {
-    setDistanceInKm(distance);
-    const costs = {};
-    for (const key in travelModes) {
-      costs[key] = (travelModes[key].rate * distance).toFixed(2);
-    }
-    setCostBreakdown(costs);
-  };
-
-  // Extract and parse destination coordinates
-  let destLat = null, destLng = null;
+  let destLat = null,
+    destLng = null;
   if (destination) {
     const decodedDestination = decodeURIComponent(destination);
     const destinationCoords = decodedDestination.split(',');
@@ -123,12 +112,20 @@ const Trips = () => {
         {error && <p className="error">{error}</p>}
       </div>
 
-      {startLocation ? (
+      {startLocation && destLat && destLng ? (
         <>
           <MapComponent
             startLocation={startLocation}
             destination={{ lat: destLat, lng: destLng }}
-            onDistanceCalculated={handleDistanceFromMap}
+          />
+
+          <DistanceCalculator
+            startLocation={startLocation}
+            destination={{ lat: destLat, lng: destLng }}
+            travelModes={travelModes}
+            setDistanceInKm={setDistanceInKm}
+            setCostBreakdown={setCostBreakdown}
+            setError={setError}
           />
 
           {distanceInKm > 0 && (
@@ -149,7 +146,6 @@ const Trips = () => {
         <p>Loading your location...</p>
       )}
 
-      
       <h1>Looking for a Place to accommodate..?</h1>
       <div className="accommodations-link">
         <DisplayAcc placeId={placeId} />
